@@ -2174,3 +2174,5 @@ button, .btn, .chip, .search-tab, .slider-btn, .menu-toggle, .back-to-top, .quic
 .btn { padding-left: 40px; padding-right: 40px; }
 .slider-btn, .back-to-top, .menu-toggle, .card-overlay + * button { border-radius: 50% !important; }
 .btn::after { border-radius: 999px; }
+.about-img-wrap img { object-position: 50% 30%; }
+.about-img-wrap img { transform: scale(1.55); transform-origin: 58% 42%; }
