@@ -2151,3 +2151,26 @@ button, .btn, .chip, .search-tab, .slider-btn, .menu-toggle, .back-to-top, .quic
 .search-tab { border-radius: 999px; padding-left: 20px; padding-right: 20px; }
 .slider-btn, .back-to-top, .menu-toggle { border-radius: 50%; }
 .card-like, .card-fav { border-radius: 50%; }
+
+/* ----------------------------------------------------------
+   EXTRA ROUND (gol): very round images, fully round buttons
+   ---------------------------------------------------------- */
+.property-card { border-radius: 40px; }
+.card-media { border-radius: 40px 40px 0 0; }
+.card-body { padding-left: 32px; padding-right: 32px; }
+.hood-card, .hood-card img, .hood-shade { border-radius: 56px; }
+.about-img-wrap, .about-img-wrap img, .about-img-wrap .reveal-cover { border-radius: 50%; }
+.about-img-wrap { outline-offset: 16px; outline-style: solid; }
+.laptop-screen { border-radius: 36px 36px 10px 10px; }
+.laptop-screen > *, .laptop img { border-radius: 28px; }
+.laptop-base { border-radius: 0 0 36px 36px; }
+.search-card { border-radius: 40px; }
+.contact-card { border-radius: 40px; }
+.badge { border-radius: 999px; padding-left: 16px; padding-right: 16px; }
+
+.btn, button.btn, .btn-gold, .btn-outline, .quick-view, .search-btn, .form-submit, .chip, .search-tab, .newsletter button, .newsletter .btn {
+    border-radius: 999px !important;
+}
+.btn { padding-left: 40px; padding-right: 40px; }
+.slider-btn, .back-to-top, .menu-toggle, .card-overlay + * button { border-radius: 50% !important; }
+.btn::after { border-radius: 999px; }
