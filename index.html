@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Maison Estate is a luxury real estate brokerage offering a private, high-touch advisory experience.">
+    <title>Maison Estate | Luxury Real Estate</title>
+
+    <!-- Google Fonts: Cormorant Garamond (headings), Tenor Sans (body & nav), Great Vibes (signature) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles and behaviour (separate files, no inline CSS/JS) -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="loading">
+
+    <!-- ==================== PRELOADER ==================== -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="preloader-logo">MAISON ESTATE</div>
+        <div class="preloader-bar"><span></span></div>
+    </div>
+
+    <!-- ==================== SVG ICON LIBRARY (inline, reusable) ==================== -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-bed" viewBox="0 0 24 24">
+            <path d="M3 18V7M3 14h18v4M21 14v-3a3 3 0 0 0-3-3h-7v6" />
+        </symbol>
+        <symbol id="i-bath" viewBox="0 0 24 24">
+            <path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3zM6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2" />
+        </symbol>
+        <symbol id="i-area" viewBox="0 0 24 24">
+            <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" />
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24">
+            <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" />
+        </symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24">
+            <path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z" />
+            <circle cx="12" cy="11" r="2" />
+        </symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24">
+            <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="14" rx="1" />
+            <path d="M3 6l9 7 9-7" />
+        </symbol>
+        <symbol id="i-insta" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r=".6" />
+        </symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M8 10v7M8 7v.5M12 17v-4a2 2 0 0 1 4 0v4M12 10v7" />
+        </symbol>
+        <symbol id="i-play" viewBox="0 0 24 24">
+            <rect x="2.5" y="5" width="19" height="14" rx="4" />
+            <path d="M10 9.5v5l4.5-2.5z" />
+        </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <header class="site-header" id="siteHeader">
+        <nav class="nav container" aria-label="Main navigation">
+            <a href="#home" class="logo" aria-label="Maison Estate home">MAISON ESTATE</a>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#properties" class="nav-link">Properties</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#neighborhoods" class="nav-link">Neighborhoods</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <a href="#contact" class="btn btn-gold nav-cta">Book a Viewing</a>
+
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-controls="mobileMenu"
+                aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Full-screen mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <ul>
+            <li><a href="#home" class="menu-link">Home</a></li>
+            <li><a href="#properties" class="menu-link">Properties</a></li>
+            <li><a href="#about" class="menu-link">About</a></li>
+            <li><a href="#neighborhoods" class="menu-link">Neighborhoods</a></li>
+            <li><a href="#contact" class="menu-link">Contact</a></li>
+            <li><a href="#contact" class="btn btn-gold">Book a Viewing</a></li>
+        </ul>
+    </div>
+
+    <main id="main">
+
+        <!-- ==================== 1. HERO ==================== -->
+        <section class="hero" id="home">
+            <div class="hero-media" id="heroMedia">
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1400&q=80"
+                    alt="Luxury villa glowing with warm lights at dusk" fetchpriority="high" decoding="async">
+            </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+
+            <div class="container hero-content">
+                <p class="label">Living Elevated</p>
+                <h1 class="hero-title">Find Your Dream Home</h1>
+                <p class="hero-text">Discreet, personal guidance for buyers, sellers and renters of the world's most
+                    distinguished properties.</p>
+                <div class="hero-actions">
+                    <a href="#properties" class="btn btn-gold">Explore Properties</a>
+                    <a href="#contact" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+
+            <!-- Floating search card -->
+            <div class="container search-wrap">
+                <form class="search-card" id="searchForm" role="search" aria-label="Property search">
+                    <div class="search-tabs" role="tablist" aria-label="Search type">
+                        <button type="button" class="search-tab is-active" role="tab" aria-selected="true"
+                            data-tab="buy">Buy</button>
+                        <button type="button" class="search-tab" role="tab" aria-selected="false"
+                            data-tab="rent">Rent</button>
+                        <button type="button" class="search-tab" role="tab" aria-selected="false"
+                            data-tab="sell">Sell</button>
+                    </div>
+
+                    <div class="search-fields">
+                        <label class="field">
+                            <span>Location</span>
+                            <select name="location">
+                                <option>Any neighborhood</option>
+                                <option>Gold Coast</option>
+                                <option>Lakeview</option>
+                                <option>Lincoln Park</option>
+                                <option>West Loop</option>
+                                <option>River North</option>
+                            </select>
+                        </label>
+                        <label class="field">
+                            <span>Property Type</span>
+                            <select name="type">
+                                <option>Any type</option>
+                                <option>Villa</option>
+                                <option>Penthouse</option>
+                                <option>Condo</option>
+                            </select>
+                        </label>
+                        <label class="field">
+                            <span>Price Range</span>
+                            <select name="price">
+                                <option>Any price</option>
+                                <option>$1M – $3M</option>
+                                <option>$3M – $10M</option>
+                                <option>$10M +</option>
+                            </select>
+                        </label>
+                        <button type="submit" class="btn btn-gold search-btn">Search</button>
+                    </div>
+                </form>
+            </div>
+
+            <a href="#stats" class="scroll-indicator" aria-label="Scroll down to highlights">
+                <span></span>
+                Scroll
+            </a>
+        </section>
+
+        <!-- ==================== 2. STATS STRIP ==================== -->
+        <section class="stats" id="stats" aria-label="Company highlights">
+            <div class="container stats-grid stagger">
+                <div class="stat reveal">
+                    <p class="stat-number" data-count="100" data-prefix="$" data-suffix="M+">$100M+</p>
+                    <p class="stat-label">Sold</p>
+                </div>
+                <div class="stat reveal">
+                    <p class="stat-number" data-count="1" data-prefix="Top " data-suffix="%">Top 1%</p>
+                    <p class="stat-label">Agents</p>
+                </div>
+                <div class="stat reveal">
+                    <p class="stat-number" data-count="20" data-suffix="+">20+</p>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3. FEATURED PROPERTIES ==================== -->
+        <section class="section section-cream" id="properties">
+            <div class="container">
+                <header class="section-header reveal">
+                    <p class="label">Featured Listings</p>
+                    <h2 class="section-title">Exceptional Homes</h2>
+                    <span class="divider" aria-hidden="true"></span>
+                </header>
+
+                <!-- Filter chips -->
+                <div class="filter-chips" role="group" aria-label="Filter properties">
+                    <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" class="chip" data-filter="villa" aria-pressed="false">Villas</button>
+                    <button type="button" class="chip" data-filter="penthouse" aria-pressed="false">Penthouses</button>
+                    <button type="button" class="chip" data-filter="condo" aria-pressed="false">Condos</button>
+                </div>
+
+                <div class="property-grid stagger">
+
+                    <!-- Card 1 -->
+                    <div class="grid-item reveal" data-type="villa">
+                        <article class="property-card">
+                            <div class="card-media">
+                                <img class="img-primary"
+                                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Modern villa with clean white facade and garden" loading="lazy"
+                                    decoding="async">
+                                <img class="img-secondary"
+                                    src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=80"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                                <div class="card-overlay">
+                                    <button type="button" class="btn btn-gold quick-view">Quick View</button>
+                                </div>
+                                <span class="badge">For Sale</span>
+                                <button type="button" class="fav" aria-label="Save to favourites" aria-pressed="false">
+                                    <svg class="ico" aria-hidden="true">
+                                        <use href="#i-heart" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-price">$8,450,000</p>
+                                <h3 class="card-address">14 Ocean Crest Drive, Gold Coast</h3>
+                                <ul class="card-meta">
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-bed" />
+                                        </svg>5 Beds</li>
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-bath" />
+                                        </svg>4 Baths</li>
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-area" />
+                                        </svg>6,200 sq ft</li>
+                                </ul>
+                                <a href="#contact" class="card-link">View Details <span class="arrow"
+                                        aria-hidden="true">→</span></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="grid-item reveal" data-type="penthouse">
+                        <article class="property-card">
+                            <div class="card-media">
+                                <img class="img-primary"
+                                    src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Glass high-rise tower against a clear sky" loading="lazy" decoding="async">
+                                <img class="img-secondary"
+                                    src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=80"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                                <div class="card-overlay">
+                                    <button type="button" class="btn btn-gold quick-view">Quick View</button>
+                                </div>
+                                <span class="badge">Just Listed</span>
+                                <button type="button" class="fav" aria-label="Save to favourites" aria-pressed="false">
+                                    <svg class="ico" aria-hidden="true">
+                                        <use href="#i-heart" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-price">$5,990,000</p>
+                                <h3 class="card-address">Penthouse 52, 300 Lakeshore Plaza, Lakeview</h3>
+                                <ul class="card-meta">
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-bed" />
+                                        </svg>3 Beds</li>
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-bath" />
+                                        </svg>3 Baths</li>
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-area" />
+                                        </svg>3,800 sq ft</li>
+                                </ul>
+                                <a href="#contact" class="card-link">View Details <span class="arrow"
+                                        aria-hidden="true">→</span></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="grid-item reveal" data-type="condo">
+                        <article class="property-card">
+                            <div class="card-media">
+                                <img class="img-primary"
+                                    src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Bright modern condo living room with large windows" loading="lazy"
+                                    decoding="async">
+                                <img class="img-secondary"
+                                    src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                                <div class="card-overlay">
+                                    <button type="button" class="btn btn-gold quick-view">Quick View</button>
+                                </div>
+                                <span class="badge">For Sale</span>
+                                <button type="button" class="fav" aria-label="Save to favourites" aria-pressed="false">
+                                    <svg class="ico" aria-hidden="true">
+                                        <use href="#i-heart" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-price">$2,150,000</p>
+                                <h3 class="card-address">9 Halsted Terrace, Unit 4B, West Loop</h3>
+                                <ul class="card-meta">
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-bed" />
+                                        </svg>2 Beds</li>
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-bath" />
+                                        </svg>2 Baths</li>
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-area" />
+                                        </svg>1,900 sq ft</li>
+                                </ul>
+                                <a href="#contact" class="card-link">View Details <span class="arrow"
+                                        aria-hidden="true">→</span></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="grid-item reveal" data-type="villa">
+                        <article class="property-card">
+                            <div class="card-media">
+                                <img class="img-primary"
+                                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Villa with infinity pool overlooking the city" loading="lazy" decoding="async">
+                                <img class="img-secondary"
+                                    src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=80"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                                <div class="card-overlay">
+                                    <button type="button" class="btn btn-gold quick-view">Quick View</button>
+                                </div>
+                                <span class="badge">Just Listed</span>
+                                <button type="button" class="fav" aria-label="Save to favourites" aria-pressed="false">
+                                    <svg class="ico" aria-hidden="true">
+                                        <use href="#i-heart" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-price">$12,300,000</p>
+                                <h3 class="card-address">22 Marlowe Estate Road, Lincoln Park</h3>
+                                <ul class="card-meta">
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-bed" />
+                                        </svg>6 Beds</li>
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-bath" />
+                                        </svg>5 Baths</li>
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-area" />
+                                        </svg>8,400 sq ft</li>
+                                </ul>
+                                <a href="#contact" class="card-link">View Details <span class="arrow"
+                                        aria-hidden="true">→</span></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="grid-item reveal" data-type="penthouse">
+                        <article class="property-card">
+                            <div class="card-media">
+                                <img class="img-primary"
+                                    src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Contemporary home exterior at golden hour" loading="lazy" decoding="async">
+                                <img class="img-secondary"
+                                    src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                                <div class="card-overlay">
+                                    <button type="button" class="btn btn-gold quick-view">Quick View</button>
+                                </div>
+                                <span class="badge">For Sale</span>
+                                <button type="button" class="fav" aria-label="Save to favourites" aria-pressed="false">
+                                    <svg class="ico" aria-hidden="true">
+                                        <use href="#i-heart" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-price">$4,700,000</p>
+                                <h3 class="card-address">Crown Residences PH-1, River North</h3>
+                                <ul class="card-meta">
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-bed" />
+                                        </svg>3 Beds</li>
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-bath" />
+                                        </svg>3 Baths</li>
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-area" />
+                                        </svg>3,100 sq ft</li>
+                                </ul>
+                                <a href="#contact" class="card-link">View Details <span class="arrow"
+                                        aria-hidden="true">→</span></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="grid-item reveal" data-type="condo">
+                        <article class="property-card">
+                            <div class="card-media">
+                                <img class="img-primary"
+                                    src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Loft interior with exposed brick and warm lighting" loading="lazy"
+                                    decoding="async">
+                                <img class="img-secondary"
+                                    src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1400&q=80"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                                <div class="card-overlay">
+                                    <button type="button" class="btn btn-gold quick-view">Quick View</button>
+                                </div>
+                                <span class="badge">For Sale</span>
+                                <button type="button" class="fav" aria-label="Save to favourites" aria-pressed="false">
+                                    <svg class="ico" aria-hidden="true">
+                                        <use href="#i-heart" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-price">$1,865,000</p>
+                                <h3 class="card-address">45 Rush Street, Loft 7, Gold Coast</h3>
+                                <ul class="card-meta">
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-bed" />
+                                        </svg>2 Beds</li>
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-bath" />
+                                        </svg>2 Baths</li>
+                                    <li><svg class="ico" aria-hidden="true">
+                                            <use href="#i-area" />
+                                        </svg>1,650 sq ft</li>
+                                </ul>
+                                <a href="#contact" class="card-link">View Details <span class="arrow"
+                                        aria-hidden="true">→</span></a>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 4. SHOWCASE WITH DEVICE MOCKUPS ==================== -->
+        <section class="section section-navy showcase" id="showcase">
+            <div class="container showcase-grid">
+
+                <div class="showcase-copy reveal-left">
+                    <p class="label">Our Platform</p>
+                    <h2 class="section-title">Your Home Search, Anywhere</h2>
+                    <p>Browse curated listings, save your favourites and book private viewings from your laptop or
+                        phone. Your advisor is always one message away.</p>
+                    <ul class="check-list">
+                        <li>Private, off-market listings</li>
+                        <li>Live price and status alerts</li>
+                        <li>One-tap private viewing requests</li>
+                    </ul>
+                </div>
+
+                <div class="device-stage reveal-right">
+                    <!-- CSS laptop -->
+                    <div class="laptop" aria-hidden="true">
+                        <div class="laptop-screen">
+                            <span class="notch"></span>
+                            <div class="wipe">
+                                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Bright luxury living room with a marble fireplace" loading="lazy"
+                                    decoding="async">
+                            </div>
+                        </div>
+                        <div class="laptop-base"></div>
+                    </div>
+                    <!-- CSS phone, overlapping the laptop's bottom-right corner -->
+                    <div class="phone" aria-hidden="true">
+                        <div class="phone-screen">
+                            <span class="phone-notch"></span>
+                            <div class="wipe">
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80"
+                                    alt="" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 5. NEIGHBORHOODS SLIDER ==================== -->
+        <section class="section section-navy" id="neighborhoods">
+            <div class="container">
+                <header class="section-header section-header-split reveal">
+                    <div>
+                        <p class="label">Neighborhoods</p>
+                        <h2 class="section-title">Live Where You Belong</h2>
+                    </div>
+                    <div class="slider-controls">
+                        <button type="button" class="slider-btn" id="prevBtn" aria-label="Previous neighborhood"
+                            aria-controls="hoodTrack">&lsaquo;</button>
+                        <button type="button" class="slider-btn" id="nextBtn" aria-label="Next neighborhood"
+                            aria-controls="hoodTrack">&rsaquo;</button>
+                    </div>
+                </header>
+            </div>
+
+            <div class="hood-track" id="hoodTrack" tabindex="0"
+                aria-label="Neighborhood slider. Use arrow keys or the buttons to browse.">
+                <article class="hood-card">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1400&q=80"
+                        alt="Skyline of the Gold Coast at dusk" loading="lazy" decoding="async" draggable="false">
+                    <div class="hood-shade" aria-hidden="true"></div>
+                    <div class="hood-info">
+                        <h3>Gold Coast</h3>
+                        <p class="hood-desc">Tree-lined streets, historic mansions and skyline views.</p>
+                    </div>
+                </article>
+                <article class="hood-card">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=80"
+                        alt="Calm lake shoreline near Lakeview" loading="lazy" decoding="async" draggable="false">
+                    <div class="hood-shade" aria-hidden="true"></div>
+                    <div class="hood-info">
+                        <h3>Lakeview</h3>
+                        <p class="hood-desc">Waterfront living, quiet parks and easy access to the city.</p>
+                    </div>
+                </article>
+                <article class="hood-card">
+                    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1400&q=80"
+                        alt="Elegant city street lined with trees in Lincoln Park" loading="lazy" decoding="async"
+                        draggable="false">
+                    <div class="hood-shade" aria-hidden="true"></div>
+                    <div class="hood-info">
+                        <h3>Lincoln Park</h3>
+                        <p class="hood-desc">Classic brownstones, leafy avenues and a relaxed pace.</p>
+                    </div>
+                </article>
+                <article class="hood-card">
+                    <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1400&q=80"
+                        alt="Modern architecture in the West Loop district" loading="lazy" decoding="async"
+                        draggable="false">
+                    <div class="hood-shade" aria-hidden="true"></div>
+                    <div class="hood-info">
+                        <h3>West Loop</h3>
+                        <p class="hood-desc">Converted lofts, galleries and the best dining in town.</p>
+                    </div>
+                </article>
+                <article class="hood-card">
+                    <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?auto=format&fit=crop&w=1400&q=80"
+                        alt="River and riverside buildings in River North" loading="lazy" decoding="async"
+                        draggable="false">
+                    <div class="hood-shade" aria-hidden="true"></div>
+                    <div class="hood-info">
+                        <h3>River North</h3>
+                        <p class="hood-desc">Riverfront towers, rooftop lounges and walkable energy.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ==================== 6. ABOUT ==================== -->
+        <section class="section section-cream about" id="about">
+            <div class="container about-grid">
+
+                <div class="about-media reveal-left">
+                    <div class="about-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=80"
+                            alt="Portrait of Elena Laurent, lead advisor at Maison Estate" loading="lazy"
+                            decoding="async">
+                        <span class="reveal-cover" aria-hidden="true"></span>
+                    </div>
+                </div>
+
+                <div class="about-copy reveal-right">
+                    <p class="label">About Us</p>
+                    <h2 class="section-title">A Personal Approach to Property</h2>
+                    <p>At Maison Estate, every client works with a dedicated advisor from the first conversation to the
+                        final signature. We listen closely, speak plainly and treat every transaction as a private
+                        matter.</p>
+                    <p>Our high-touch advisory model combines deep local knowledge with discreet marketing and careful
+                        negotiation, so you can make confident decisions about the most important asset you own.</p>
+                    <p class="signature">Elena Laurent</p>
+                    <a href="#contact" class="btn btn-gold">Meet the Team</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 7. TESTIMONIALS ==================== -->
+        <section class="section section-navy testimonials" id="testimonials">
+            <div class="container">
+                <div class="text-center reveal">
+                    <p class="label">Client Stories</p>
+                    <h2 class="section-title">Words From Our Clients</h2>
+                    <span class="divider" aria-hidden="true"></span>
+                </div>
+
+                <div class="testi-slider" id="testiSlider" aria-live="polite">
+                    <figure class="testi-slide is-active">
+                        <blockquote>&ldquo;Maison Estate guided us through every step with patience and quiet
+                            confidence. We never felt rushed, and the result exceeded our expectations.&rdquo;
+                        </blockquote>
+                        <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                        <figcaption><strong>Sarah Mitchell</strong>, Chicago</figcaption>
+                    </figure>
+                    <figure class="testi-slide">
+                        <blockquote>&ldquo;Their off-market access and honest pricing advice saved us months of
+                            searching. Our advisor felt less like an agent and more like a trusted partner.&rdquo;
+                        </blockquote>
+                        <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                        <figcaption><strong>James Whitfield</strong>, Lake Forest</figcaption>
+                    </figure>
+                    <figure class="testi-slide">
+                        <blockquote>&ldquo;From the first viewing to the handover, everything was handled with
+                            discretion and care. We are already recommending Maison Estate to our friends.&rdquo;
+                        </blockquote>
+                        <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                        <figcaption><strong>Amara Okafor</strong>, Miami</figcaption>
+                    </figure>
+                </div>
+
+                <div class="testi-dots" role="tablist" aria-label="Choose a testimonial">
+                    <button type="button" class="dot is-active" role="tab" aria-selected="true"
+                        aria-label="Testimonial 1"></button>
+                    <button type="button" class="dot" role="tab" aria-selected="false"
+                        aria-label="Testimonial 2"></button>
+                    <button type="button" class="dot" role="tab" aria-selected="false"
+                        aria-label="Testimonial 3"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 8. CONTACT ==================== -->
+        <section class="section section-cream contact" id="contact">
+            <div class="container">
+                <div class="contact-card reveal">
+
+                    <aside class="contact-info">
+                        <p class="label">Contact</p>
+                        <h2 class="section-title">Get in Touch</h2>
+                        <ul class="info-list">
+                            <li>
+                                <svg class="ico" aria-hidden="true">
+                                    <use href="#i-pin" />
+                                </svg>
+                                <span>120 Lakeshore Avenue, Suite 900<br>Chicago, IL 60611</span>
+                            </li>
+                            <li>
+                                <svg class="ico" aria-hidden="true">
+                                    <use href="#i-phone" />
+                                </svg>
+                                <a href="tel:+13125550187">+1 (312) 555-0187</a>
+                            </li>
+                            <li>
+                                <svg class="ico" aria-hidden="true">
+                                    <use href="#i-mail" />
+                                </svg>
+                                <a href="mailto:hello@maisonestate.com">hello@maisonestate.com</a>
+                            </li>
+                        </ul>
+                        <div class="socials">
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                                <svg class="ico" aria-hidden="true">
+                                    <use href="#i-insta" />
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                                <svg class="ico" aria-hidden="true">
+                                    <use href="#i-linkedin" />
+                                </svg>
+                            </a>
+                            <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+                                <svg class="ico" aria-hidden="true">
+                                    <use href="#i-play" />
+                                </svg>
+                            </a>
+                        </div>
+                    </aside>
+
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="cName">Name</label>
+                            <input id="cName" name="name" type="text" required minlength="2" autocomplete="name">
+                            <p class="error" id="cName-error" role="alert"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cEmail">Email</label>
+                            <input id="cEmail" name="email" type="email" required autocomplete="email">
+                            <p class="error" id="cEmail-error" role="alert"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cPhone">Phone <span class="optional">(optional)</span></label>
+                            <input id="cPhone" name="phone" type="tel" autocomplete="tel">
+                            <p class="error" id="cPhone-error" role="alert"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cInterest">Interested In</label>
+                            <select id="cInterest" name="interest" required>
+                                <option value="">Select an option</option>
+                                <option>Buying a home</option>
+                                <option>Selling a property</option>
+                                <option>Renting</option>
+                                <option>Private viewing</option>
+                            </select>
+                            <p class="error" id="cInterest-error" role="alert"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cMessage">Message</label>
+                            <textarea id="cMessage" name="message" rows="4" required minlength="10"></textarea>
+                            <p class="error" id="cMessage-error" role="alert"></p>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold form-submit">Send Message</button>
+                    </form>
+
+                    <p class="form-success" id="formSuccess" hidden tabindex="-1">
+                        Thank you! Your message has been received. A Maison Estate advisor will contact you within one
+                        business day.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+                <a href="#home" class="logo">MAISON ESTATE</a>
+                <p>A boutique luxury brokerage offering discreet, personal guidance for extraordinary homes.</p>
+            </div>
+
+            <nav class="footer-col" aria-label="Quick links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#properties">Properties</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-col" aria-label="Neighborhoods">
+                <h4>Neighborhoods</h4>
+                <ul>
+                    <li><a href="#neighborhoods">Gold Coast</a></li>
+                    <li><a href="#neighborhoods">Lakeview</a></li>
+                    <li><a href="#neighborhoods">Lincoln Park</a></li>
+                    <li><a href="#neighborhoods">West Loop</a></li>
+                    <li><a href="#neighborhoods">River North</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Receive quiet, curated previews of new listings before they reach the market.</p>
+                <form class="newsletter" id="newsletterForm">
+                    <label class="sr-only" for="nlEmail">Email address</label>
+                    <input id="nlEmail" name="email" type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-gold">Subscribe</button>
+                </form>
+                <p class="form-msg" id="nlMsg" aria-live="polite"></p>
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="gold-divider" aria-hidden="true"></div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Maison Estate. All rights reserved.</p>
+                <div class="socials">
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg class="ico" aria-hidden="true">
+                            <use href="#i-insta" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg class="ico" aria-hidden="true">
+                            <use href="#i-linkedin" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+                        <svg class="ico" aria-hidden="true">
+                            <use href="#i-play" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+
+</body>
+
+</html>
