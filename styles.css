@@ -2132,3 +2132,22 @@ body.loading .site-header {
 @media (prefers-reduced-motion: reduce) {
     .btn-gold, .hero .btn-gold { animation: none; }
 }
+
+/* ----------------------------------------------------------
+   MORE RADIUS: every image and every button
+   ---------------------------------------------------------- */
+.card-media, .hood-card, .about-img-wrap, .laptop-screen, .laptop-screen > *, .showcase img { border-radius: 24px; }
+.card-media { border-radius: 24px 24px 0 0; }
+.property-card { border-radius: 24px; }
+.card-media img, .img-primary, .img-secondary, .hood-card img, .about-img-wrap img, .laptop img, .showcase img { border-radius: inherit; }
+.hood-card { border-radius: 26px; }
+.about-img-wrap { border-radius: 30px; }
+.about-img-wrap .reveal-cover { border-radius: 30px; }
+.laptop-screen { border-radius: 22px 22px 8px 8px; }
+.laptop-base { border-radius: 0 0 22px 22px; }
+.hood-shade, .card-overlay { border-radius: inherit; }
+
+button, .btn, .chip, .search-tab, .slider-btn, .menu-toggle, .back-to-top, .quick-view, .search-btn, .form-submit, .newsletter button, .card-like, .card-fav { border-radius: 999px; }
+.search-tab { border-radius: 999px; padding-left: 20px; padding-right: 20px; }
+.slider-btn, .back-to-top, .menu-toggle { border-radius: 50%; }
+.card-like, .card-fav { border-radius: 50%; }
